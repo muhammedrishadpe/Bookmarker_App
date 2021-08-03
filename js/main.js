@@ -28,6 +28,9 @@ function saveBookmark(e){
         // Get bookmarks from LocalStorage
        var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
        // add bookmark to array
+       bookmarks.push(bookmark);
+       // Re-set back to localStorage
+       localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
     }
 
     // Prevent form  from submitting
