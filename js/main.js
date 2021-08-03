@@ -12,7 +12,23 @@ function saveBookmark(e){
         name: siteName,
         url: siteUrl
     }
-    console.log(Bookmark);
+
+    // Local storage Test
+
+
+    // Test if bookmark is null
+    if(localStorage.getItem('bookmarks') === null){
+        // init array
+        var bookmarks = [];
+        // add to arry
+        bookmarks.push(bookmark);
+        // set to localStorage
+        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    } else {
+        // Get bookmarks from LocalStorage
+       var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+       // add bookmark to array
+    }
 
     // Prevent form  from submitting
     e.preventDefault();
